@@ -1,5 +1,4 @@
 import { ArrowUpRight, Mail, Phone } from "lucide-react";
-import enactusAsset from "@/assets/enactus-fest.jpg.asset.json";
 import {
   about,
   certifications,
@@ -149,8 +148,9 @@ export function Experience() {
 
 export function Engagement() {
   return (
-    <section id="engagements" className="bg-foreground py-24 text-background md:py-32">
-      <div className="container-page">
+    <section id="engagements" className="relative overflow-hidden bg-foreground py-24 text-background md:py-32">
+      <div aria-hidden="true" className="glow-blob parallax absolute -right-40 top-10 h-[30rem] w-[30rem] opacity-30" style={{ "--speed": "-0.12" } as React.CSSProperties} />
+      <div className="container-page relative">
         <Reveal className="max-w-3xl">
           <p className="eyebrow">Leadership & terrain</p>
           <h2 className="section-title mt-4">Engagement associatif</h2>
@@ -172,7 +172,7 @@ export function Engagement() {
             <p className="mt-2 text-sm text-background/70">Finale nationale Enactus</p>
           </div>
         </div>
-        <div className="mt-14 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-10 md:grid-cols-2">
           {engagements.map((e, i) => (
             <Reveal key={e.title} delay={i * 120}>
               <p className="text-sm font-medium text-primary">{e.period}</p>
@@ -181,21 +181,6 @@ export function Engagement() {
               <p className="mt-4 leading-relaxed text-background/80">{e.body}</p>
             </Reveal>
           ))}
-          <Reveal delay={240}>
-            <figure className="overflow-hidden rounded-2xl border border-background/15">
-              <img
-                src={enactusAsset.url}
-                alt="Houda (au centre) avec son équipe lors de l'Enactus Sustainable Innovation Fest"
-                width={1000}
-                height={1500}
-                loading="lazy"
-                className="aspect-[4/5] w-full object-cover object-center"
-              />
-              <figcaption className="px-4 py-3 text-xs text-background/60">
-                Enactus · Sustainable Innovation Fest
-              </figcaption>
-            </figure>
-          </Reveal>
         </div>
       </div>
     </section>
@@ -297,7 +282,7 @@ export function Profile() {
           <p className="mt-3 text-ink-soft">{profile.role}</p>
           <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
             MSc Business Développement & Digital Marketing · EDC Paris Business School. Recherche d'alternance à partir de
-            septembre 2026.
+            décembre 2026.
           </p>
         </Reveal>
         <div className="space-y-10 lg:col-span-7">

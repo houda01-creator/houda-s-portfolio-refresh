@@ -1,8 +1,8 @@
 export const profile = {
   firstName: "Houda",
-  lastName: "Es-Seyouri",
+  lastName: "ES-SEYOURI",
   role: "Business Developer · Marketing Digital",
-  availability: "Alternance dès septembre 2026",
+  availability: "Alternance dès décembre 2026",
   school: "MSc EDC Paris Business School",
   intro:
     "J'apprends vite, j'exécute avec rigueur et je transforme des idées en projets concrets, chiffrés et défendables : marketing digital, stratégie et coordination d'équipe.",
@@ -20,14 +20,21 @@ export const navLinks = [
 ];
 
 export const tools = [
-  "SEO / SEA",
-  "Social Media",
-  "Content Creation & Strategy",
-  "Data Analytics",
   "Pack Office",
-  "SAP Logistics",
-  "Notion / Trello",
-  "Canva / Figma",
+  "SAP / ERP",
+  "Google Analytics",
+  "Canva",
+  "Figma",
+  "Stitch",
+  "Framer",
+  "Replit",
+  "CapCut",
+  "WordPress",
+  "CRM",
+  "SEO / SEA",
+  "Notion",
+  "Trello",
+  "Outils d'IA",
 ];
 
 export type Figure = { value: number; prefix?: string; suffix?: string; label: string };
@@ -196,7 +203,7 @@ export const education = [
     period: "2025 – 2027",
     title: "MSc Business Développement & Marketing Digital",
     school: "EDC Paris Business School · Paris, France",
-    note: "Alternance dès sept. 2026",
+    note: "Alternance dès déc. 2026",
     body: "Rythme : 3 semaines en entreprise / 1 semaine en formation. Spécialisation stratégie de croissance, marketing digital et gestion de projets complexes.",
   },
   {
@@ -287,4 +294,8 @@ export const hobbies = [
   { icon: "🏕️", label: "Voyages en solo" },
   { icon: "🐎", label: "Équitation" },
   { icon: "🎸", label: "Guitare" },
+  { icon: "🎧", label: "Écouter de la musique" },
+  { icon: "📚", label: "Lire des œuvres" },
+  { icon: "🍳", label: "Cuisiner" },
+  { icon: "🍜", label: "Déguster de nouvelles cuisines" },
 ];

@@ -59,31 +59,31 @@
 :root {
   --radius: 0.875rem;
   /* Warm paper + ink + terracotta */
-  --background: oklch(0.982 0.004 85);
-  --foreground: oklch(0.22 0.006 50);
+  --background: oklch(0.985 0.005 90);
+  --foreground: oklch(0.22 0.04 260);
   --card: oklch(0.995 0.002 85);
-  --card-foreground: oklch(0.22 0.006 50);
+  --card-foreground: oklch(0.22 0.04 260);
   --popover: oklch(0.995 0.002 85);
-  --popover-foreground: oklch(0.22 0.006 50);
-  --primary: oklch(0.6 0.165 34);
+  --popover-foreground: oklch(0.22 0.04 260);
+  --primary: oklch(0.52 0.15 28);
   --primary-foreground: oklch(0.985 0.004 85);
   --primary-soft: oklch(0.9 0.045 38);
-  --secondary: oklch(0.955 0.009 75);
-  --secondary-foreground: oklch(0.22 0.006 50);
-  --muted: oklch(0.955 0.009 75);
-  --muted-foreground: oklch(0.52 0.012 60);
+  --secondary: oklch(0.955 0.01 250);
+  --secondary-foreground: oklch(0.22 0.04 260);
+  --muted: oklch(0.955 0.01 250);
+  --muted-foreground: oklch(0.47 0.02 260);
   --accent: oklch(0.94 0.025 45);
   --accent-foreground: oklch(0.42 0.12 34);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.9 0.008 70);
+  --border: oklch(0.89 0.012 250);
   --input: oklch(0.9 0.008 70);
-  --ring: oklch(0.6 0.165 34);
-  --ink-soft: oklch(0.36 0.008 55);
+  --ring: oklch(0.52 0.15 28);
+  --ink-soft: oklch(0.34 0.03 260);
   --success: oklch(0.65 0.14 150);
 
   --shadow-soft: 0 1px 2px oklch(0.22 0.006 50 / 4%), 0 12px 40px -16px oklch(0.22 0.006 50 / 14%);
-  --shadow-lift: 0 2px 4px oklch(0.22 0.006 50 / 4%), 0 24px 60px -24px oklch(0.6 0.165 34 / 28%);
+  --shadow-lift: 0 2px 4px oklch(0.22 0.006 50 / 4%), 0 24px 60px -24px oklch(0.52 0.15 28 / 28%);
   --gradient-glow: radial-gradient(closest-side, oklch(0.84 0.08 38 / 55%), transparent);
 
   --chart-1: oklch(0.646 0.222 41.116);
@@ -92,11 +92,11 @@
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
   --sidebar: oklch(0.982 0.004 85);
-  --sidebar-foreground: oklch(0.22 0.006 50);
+  --sidebar-foreground: oklch(0.22 0.04 260);
   --sidebar-primary: oklch(0.6 0.165 34);
   --sidebar-primary-foreground: oklch(0.985 0.004 85);
   --sidebar-accent: oklch(0.955 0.009 75);
-  --sidebar-accent-foreground: oklch(0.22 0.006 50);
+  --sidebar-accent-foreground: oklch(0.22 0.04 260);
   --sidebar-border: oklch(0.9 0.008 70);
   --sidebar-ring: oklch(0.6 0.165 34);
 }
@@ -221,26 +221,6 @@
     border-radius: 999px;
     filter: blur(10px);
   }
-  /* Portrait: arch frame with an offset terracotta echo behind it */
-  .portrait-arch {
-    border-radius: 999px 999px var(--radius-2xl) var(--radius-2xl);
-  }
-  .portrait-shell {
-    border-radius: 999px 999px var(--radius-2xl) var(--radius-2xl);
-    border: 1px solid var(--border);
-    background: var(--secondary);
-    box-shadow: var(--shadow-soft);
-    overflow: hidden;
-    transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.45s ease;
-  }
-  .portrait-shell:hover {
-    transform: translateY(-4px) rotate(-0.6deg);
-    box-shadow: var(--shadow-lift);
-  }
-  .portrait-echo {
-    border-radius: 999px 999px var(--radius-2xl) var(--radius-2xl);
-    border: 1px solid var(--primary-soft);
-  }
 }
 
 /* ---------- Intro bubble ---------- */
@@ -337,4 +317,20 @@
   .rise, .reveal { opacity: 1; transform: none; filter: none; animation: none; transition: none; }
   .underline-draw { transform: none; animation: none; }
   .float-slow, .float-slower, .marquee-track, .pulse-dot { animation: none; }
+}
+
+/* ---------- Parallax, scroll progress, smoother hovers ---------- */
+html { scroll-behavior: smooth; }
+.parallax { transform: translate3d(0, calc(var(--py, 0) * var(--speed, 0.2) * 1px), 0); will-change: transform; }
+.scroll-progress {
+  position: fixed; inset: 0 0 auto 0; height: 3px; z-index: 60;
+  background: var(--primary); transform-origin: 0 50%; transform: scaleX(var(--progress, 0));
+}
+.card-hover { transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease, border-color 0.5s ease; }
+.card-hover:hover { border-color: var(--primary-soft); }
+.reveal { transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1) !important; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .parallax { transform: none; }
+  .scroll-progress { display: none; }
 }

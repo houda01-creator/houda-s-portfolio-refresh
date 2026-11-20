@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/portfolio/Hero";
 import { IntroBubble } from "@/components/portfolio/IntroBubble";
 import { Nav } from "@/components/portfolio/Nav";
+import { ScrollEffects } from "@/components/portfolio/ScrollEffects";
 import {
   Certifications,
   Contact,
@@ -15,9 +16,9 @@ import {
   Projects,
 } from "@/components/portfolio/Sections";
 
-const title = "Houda Es-Seyouri — Business Developer en alternance";
+const title = "Houda ES-SEYOURI — Business Developer en alternance";
 const description =
-  "Portfolio de Houda Es-Seyouri, Business Developer & Marketing Digital (MSc EDC Paris), en recherche d'alternance dès septembre 2026.";
+  "Portfolio de Houda ES-SEYOURI, Business Developer & Marketing Digital (MSc EDC Paris), en recherche d'alternance dès décembre 2026.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -37,6 +38,7 @@ function Index() {
   return (
     <>
       <IntroBubble />
+      <ScrollEffects />
       <Nav />
       <main>
         <Hero />

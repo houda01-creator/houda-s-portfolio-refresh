@@ -1,5 +1,4 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
-import portraitAsset from "@/assets/houda-portrait.jpeg.asset.json";
 import { keyFigures, profile, tools } from "@/data/portfolio";
 import { CountUp } from "./CountUp";
 
@@ -9,11 +8,11 @@ export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-28 md:pt-36">
       {/* Soft ambient bubbles */}
-      <div aria-hidden="true" className="glow-blob float-slow absolute -right-32 -top-24 h-[34rem] w-[34rem]" />
-      <div aria-hidden="true" className="glow-blob float-slower absolute -left-40 top-[60%] h-[22rem] w-[22rem] opacity-60" />
+      <div aria-hidden="true" className="glow-blob parallax absolute -right-32 -top-24 h-[34rem] w-[34rem]" style={{ "--speed": "0.25" } as React.CSSProperties} />
+      <div aria-hidden="true" className="glow-blob parallax absolute -left-40 top-[60%] h-[22rem] w-[22rem] opacity-60" style={{ "--speed": "-0.15" } as React.CSSProperties} />
 
       <div className="container-page relative grid items-center gap-14 pb-12 lg:grid-cols-12 lg:gap-10">
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-10">
           <div className="rise flex flex-wrap items-center gap-3" style={d(0)}>
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-ink-soft">
               <span className="pulse-dot h-2 w-2 rounded-full bg-success" />
@@ -37,7 +36,7 @@ export function Hero() {
               </span>
             </span>
             <span className="rise block" style={d(400)}>
-              dès septembre 2026.
+              dès décembre 2026.
             </span>
           </h1>
 
@@ -55,23 +54,6 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="rise lg:col-span-5" style={d(500)}>
-          <figure className="relative mx-auto w-full max-w-[21rem]">
-            <div aria-hidden="true" className="portrait-echo absolute inset-0 translate-x-4 translate-y-4" />
-            <div className="portrait-shell relative">
-              <img
-                src={portraitAsset.url}
-                alt="Portrait de Houda Es-Seyouri"
-                width={1920}
-                height={1920}
-                className="aspect-[4/5] w-full object-cover object-top"
-              />
-            </div>
-            <figcaption className="mt-7 text-center text-[0.7rem] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-              {profile.firstName} {profile.lastName}
-            </figcaption>
-          </figure>
-        </div>
       </div>
 
       {/* Key figures */}

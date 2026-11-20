@@ -1,19 +1,18 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
+import portraitAsset from "@/assets/houda-portrait.jpeg.asset.json";
 import { keyFigures, profile, tools } from "@/data/portfolio";
 import { CountUp } from "./CountUp";
 
 const d = (ms: number) => ({ "--d": `${ms}ms` }) as React.CSSProperties;
 
 export function Hero() {
-  const [main, ...rest] = keyFigures;
-
   return (
     <section id="top" className="relative overflow-hidden pt-28 md:pt-36">
       {/* Soft ambient bubbles */}
       <div aria-hidden="true" className="glow-blob float-slow absolute -right-32 -top-24 h-[34rem] w-[34rem]" />
       <div aria-hidden="true" className="glow-blob float-slower absolute -left-40 top-[60%] h-[22rem] w-[22rem] opacity-60" />
 
-      <div className="container-page relative grid items-center gap-14 pb-20 lg:grid-cols-12 lg:gap-10">
+      <div className="container-page relative grid items-center gap-14 pb-12 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-7">
           <div className="rise flex flex-wrap items-center gap-3" style={d(0)}>
             <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-ink-soft">
@@ -57,30 +56,41 @@ export function Hero() {
         </div>
 
         <div className="rise lg:col-span-5" style={d(500)}>
-          <div className="card-soft relative overflow-hidden p-8">
-            <div aria-hidden="true" className="glow-blob absolute -right-16 -top-16 h-48 w-48 opacity-70" />
-            <p className="eyebrow relative">En quelques chiffres</p>
-            {main && (
-              <div className="relative mt-6">
-                <p className="font-display text-7xl font-medium leading-none text-foreground">
-                  <CountUp figure={main} startDelay={1300} />
+          <figure className="relative mx-auto w-full max-w-[21rem]">
+            <div aria-hidden="true" className="portrait-echo absolute inset-0 translate-x-4 translate-y-4" />
+            <div className="portrait-shell relative">
+              <img
+                src={portraitAsset.url}
+                alt="Portrait de Houda Es-Seyouri"
+                width={1920}
+                height={1920}
+                className="aspect-[4/5] w-full object-cover object-top"
+              />
+            </div>
+            <figcaption className="mt-7 text-center text-[0.7rem] font-medium uppercase tracking-[0.2em] text-muted-foreground">
+              {profile.firstName} {profile.lastName}
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      {/* Key figures */}
+      <div className="container-page relative pb-20">
+        <div className="rise card-soft p-8" style={d(760)}>
+          <p className="eyebrow">En quelques chiffres</p>
+          <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-7">
+            {keyFigures.map((f, i) => (
+              <li key={f.label} className={i === 0 ? "lg:col-span-2" : undefined}>
+                <p className={`font-display leading-none ${i === 0 ? "text-5xl" : "text-3xl"}`}>
+                  <CountUp figure={f} startDelay={1300 + i * 120} />
                 </p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  {main.label} · B2B & B2C, secteur santé
+                <p className="mt-2 text-xs leading-snug text-muted-foreground">
+                  {f.label}
+                  {i === 0 ? " · B2B & B2C, secteur santé" : ""}
                 </p>
-              </div>
-            )}
-            <ul className="relative mt-8 divide-y divide-border border-t border-border">
-              {rest.map((f, i) => (
-                <li key={f.label} className="flex items-baseline justify-between py-3.5">
-                  <span className="text-sm text-muted-foreground">{f.label}</span>
-                  <span className="font-display text-2xl">
-                    <CountUp figure={f} startDelay={1400 + i * 120} />
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 

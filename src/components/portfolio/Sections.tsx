@@ -1,4 +1,5 @@
 import { ArrowUpRight, Mail, Phone } from "lucide-react";
+import enactusAsset from "@/assets/enactus-fest.jpg.asset.json";
 import {
   about,
   certifications,
@@ -171,7 +172,7 @@ export function Engagement() {
             <p className="mt-2 text-sm text-background/70">Finale nationale Enactus</p>
           </div>
         </div>
-        <div className="mt-14 grid gap-10 md:grid-cols-2">
+        <div className="mt-14 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {engagements.map((e, i) => (
             <Reveal key={e.title} delay={i * 120}>
               <p className="text-sm font-medium text-primary">{e.period}</p>
@@ -180,6 +181,21 @@ export function Engagement() {
               <p className="mt-4 leading-relaxed text-background/80">{e.body}</p>
             </Reveal>
           ))}
+          <Reveal delay={240}>
+            <figure className="overflow-hidden rounded-2xl border border-background/15">
+              <img
+                src={enactusAsset.url}
+                alt="Houda (au centre) avec son équipe lors de l'Enactus Sustainable Innovation Fest"
+                width={1000}
+                height={1500}
+                loading="lazy"
+                className="aspect-[4/5] w-full object-cover object-center"
+              />
+              <figcaption className="px-4 py-3 text-xs text-background/60">
+                Enactus · Sustainable Innovation Fest
+              </figcaption>
+            </figure>
+          </Reveal>
         </div>
       </div>
     </section>

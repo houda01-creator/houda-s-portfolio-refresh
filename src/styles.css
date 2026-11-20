@@ -221,6 +221,26 @@
     border-radius: 999px;
     filter: blur(10px);
   }
+  /* Portrait: arch frame with an offset terracotta echo behind it */
+  .portrait-arch {
+    border-radius: 999px 999px var(--radius-2xl) var(--radius-2xl);
+  }
+  .portrait-shell {
+    border-radius: 999px 999px var(--radius-2xl) var(--radius-2xl);
+    border: 1px solid var(--border);
+    background: var(--secondary);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+    transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.45s ease;
+  }
+  .portrait-shell:hover {
+    transform: translateY(-4px) rotate(-0.6deg);
+    box-shadow: var(--shadow-lift);
+  }
+  .portrait-echo {
+    border-radius: 999px 999px var(--radius-2xl) var(--radius-2xl);
+    border: 1px solid var(--primary-soft);
+  }
 }
 
 /* ---------- Intro bubble ---------- */

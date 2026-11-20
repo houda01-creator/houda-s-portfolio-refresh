@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- Portfolio content lives in `src/data/portfolio.ts`; components only render it — edit text there, not in JSX.
+- Animations (intro bubble, hero rise, scroll reveal, marquee) are CSS keyframes in `src/styles.css` so they play before hydration and respect reduced motion.

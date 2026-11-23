@@ -1,6 +1,7 @@
 import { ArrowUpRight, Mail, Phone } from "lucide-react";
 import {
   about,
+  type Certification,
   certifications,
   education,
   engagementStats,
@@ -228,6 +229,44 @@ export function Education() {
   );
 }
 
+function CertCard({ c }: { c: Certification }) {
+  const cardClass = "card-soft card-hover group flex h-full flex-col p-6";
+  const inner = (
+    <>
+      <p className="text-xs text-muted-foreground">
+        {c.org} · {c.date} 2026
+      </p>
+      <h3 className="mt-2 text-2xl font-medium leading-tight">{c.title}</h3>
+      <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">{c.body}</p>
+      <div className="mt-5 flex items-center justify-between gap-3">
+        <div className="flex flex-wrap gap-1.5">
+          {c.tags.map((t) => (
+            <span key={t} className="chip !text-xs">
+              {t}
+            </span>
+          ))}
+        </div>
+        {c.href && (
+          <ArrowUpRight className="h-5 w-5 shrink-0 text-primary transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+        )}
+      </div>
+      {c.code && (
+        <p className="mt-3 border-t border-border/60 pt-3 text-xs text-muted-foreground">
+          Code de vérification · <span className="font-medium text-ink-soft">{c.code}</span>
+        </p>
+      )}
+    </>
+  );
+
+  return c.href ? (
+    <a href={c.href} target="_blank" rel="noreferrer" className={cardClass}>
+      {inner}
+    </a>
+  ) : (
+    <div className={cardClass}>{inner}</div>
+  );
+}
+
 export function Certifications() {
   return (
     <section id="certifications" className="py-24 md:py-32">
@@ -240,28 +279,7 @@ export function Certifications() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {certifications.map((c, i) => (
             <Reveal key={c.title} delay={(i % 3) * 80}>
-              <a
-                href={c.href}
-                target="_blank"
-                rel="noreferrer"
-                className="card-soft card-hover group flex h-full flex-col p-6"
-              >
-                <p className="text-xs text-muted-foreground">
-                  {c.org} · {c.date} 2026
-                </p>
-                <h3 className="mt-2 text-2xl font-medium leading-tight">{c.title}</h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">{c.body}</p>
-                <div className="mt-5 flex items-center justify-between">
-                  <div className="flex flex-wrap gap-1.5">
-                    {c.tags.map((t) => (
-                      <span key={t} className="chip !text-xs">
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                  <ArrowUpRight className="h-5 w-5 shrink-0 text-primary transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </div>
-              </a>
+              <CertCard c={c} />
             </Reveal>
           ))}
         </div>

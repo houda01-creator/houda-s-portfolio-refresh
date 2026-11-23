@@ -220,7 +220,17 @@ export const education = [
   },
 ];
 
-export const certifications = [
+export type Certification = {
+  org: string;
+  date: string;
+  title: string;
+  body: string;
+  tags: string[];
+  href?: string;
+  code?: string;
+};
+
+export const certifications: Certification[] = [
   {
     org: "Nestlé YEP",
     date: "17 sept.",
@@ -276,6 +286,14 @@ export const certifications = [
     body: "Plans d'expériences structurés, optimisation de formulations et analyse rigoureuse des données.",
     tags: ["Méthodologie", "Optimisation"],
     href: "https://drive.google.com/file/d/1K1BC1uAZWaHqtd0o_M1BQisKYL5i654z/view?usp=sharing",
+  },
+  {
+    org: "GIZ DataCipation",
+    date: "nov.",
+    title: "The African Data Economy in the Global Context",
+    body: "Acquisition d'une vision stratégique sur les enjeux, les dynamiques et la gouvernance de l'économie des données en Afrique à l'échelle mondiale.",
+    tags: ["Économie des données", "Gouvernance"],
+    code: "6777329865HE",
   },
 ];
 

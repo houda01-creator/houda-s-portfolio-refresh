@@ -18,7 +18,7 @@ import {
 
 const title = "Houda ES-SEYOURI — Business Developer en alternance";
 const description =
-  "Portfolio de Houda ES-SEYOURI, Business Developer & Marketing Digital (MSc EDC Paris), en recherche d'alternance dès décembre 2026.";
+  "Portfolio de Houda ES-SEYOURI, Business Developer & Marketing Digital (MSc EDC Paris), en recherche d'alternance ou de stage de 6 mois dès décembre 2026.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

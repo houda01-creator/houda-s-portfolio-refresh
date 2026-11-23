@@ -281,7 +281,7 @@ export function Profile() {
           </h2>
           <p className="mt-3 text-ink-soft">{profile.role}</p>
           <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-            MSc Business Développement & Digital Marketing · EDC Paris Business School. Recherche d'alternance à partir de
+            MSc Business Développement & Digital Marketing · EDC Paris Business School. Recherche d'alternance ou de stage de 6 mois à partir de
             décembre 2026.
           </p>
         </Reveal>

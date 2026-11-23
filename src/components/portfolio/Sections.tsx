@@ -327,7 +327,7 @@ export function Contact() {
         <p className="eyebrow">Contact</p>
         <h2 className="section-title mx-auto mt-4 max-w-3xl">Un dossier à défendre ou un projet à structurer ?</h2>
         <p className="mx-auto mt-6 max-w-xl text-lg text-ink-soft">
-          Je repars de ce qui existe déjà, même bancal, et je le rends solide. Parlons de votre alternance ou de votre stage de 6 mois.
+          Parlons de votre alternance ou de votre stage de 6 mois.
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-3">
           <a href={`mailto:${profile.email}`} className="btn-primary">

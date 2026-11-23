@@ -47,13 +47,19 @@ function texts() {
 describe("Cohérence alternance / stage de 6 mois", () => {
   const all = texts();
 
+  // Wording varies by place (alternance / alternant, stage / stagiaire) but the
+  // two offers must always be named together.
+  const OFFERS = [
+    { label: "alternance", re: /alternan(ce|t)/ },
+    { label: "stage de 6 mois", re: /(stage|stagiaire) de 6 mois/ },
+  ];
+
   for (const [name, value] of Object.entries(all)) {
-    it(`« ${name} » mentionne l'alternance`, () => {
-      expect(norm(value)).toContain("alternance");
-    });
-    it(`« ${name} » mentionne le stage de 6 mois`, () => {
-      expect(norm(value)).toContain("stage de 6 mois");
-    });
+    for (const offer of OFFERS) {
+      it(`« ${name} » mentionne ${offer.label}`, () => {
+        expect(offer.re.test(norm(value))).toBe(true);
+      });
+    }
   }
 
   it("le titre principal, la fiche profil et la description donnent la même date : décembre 2026", () => {

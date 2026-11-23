@@ -36,6 +36,9 @@ export function Hero() {
               </span>
             </span>
             <span className="rise block" style={d(400)}>
+              ou en stage de 6 mois
+            </span>
+            <span className="rise block" style={d(520)}>
               dès décembre 2026.
             </span>
           </h1>

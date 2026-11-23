@@ -2,7 +2,7 @@ export const profile = {
   firstName: "Houda",
   lastName: "ES-SEYOURI",
   role: "Business Developer · Marketing Digital",
-  availability: "Alternance dès décembre 2026",
+  availability: "Alternance ou stage de 6 mois dès décembre 2026",
   school: "MSc EDC Paris Business School",
   intro:
     "J'apprends vite, j'exécute avec rigueur et je transforme des idées en projets concrets, chiffrés et défendables : marketing digital, stratégie et coordination d'équipe.",

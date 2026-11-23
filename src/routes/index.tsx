@@ -16,7 +16,7 @@ import {
   Projects,
 } from "@/components/portfolio/Sections";
 
-const title = "Houda ES-SEYOURI — Business Developer en alternance";
+const title = "Houda ES-SEYOURI — Business Developer en alternance ou stage de 6 mois";
 const description =
   "Portfolio de Houda ES-SEYOURI, Business Developer & Marketing Digital (MSc EDC Paris), en recherche d'alternance ou de stage de 6 mois dès décembre 2026.";
 

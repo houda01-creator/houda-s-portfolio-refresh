@@ -33,3 +33,4 @@ use the editor.
 
 - Portfolio content lives in `src/data/portfolio.ts`; components only render it — edit text there, not in JSX.
 - Animations (intro bubble, hero rise, scroll reveal, marquee) are CSS keyframes in `src/styles.css` so they play before hydration and respect reduced motion.
+- Dark sections (bg-foreground) add the `.on-dark` class, which swaps `--primary` for `--primary-on-dark`; why: the light-page accent is unreadable on dark bands.

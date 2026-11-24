@@ -149,7 +149,7 @@ export function Experience() {
 
 export function Engagement() {
   return (
-    <section id="engagements" className="relative overflow-hidden bg-foreground py-24 text-background md:py-32">
+    <section id="engagements" className="on-dark relative overflow-hidden bg-foreground py-24 text-background md:py-32">
       <div aria-hidden="true" className="glow-blob parallax absolute -right-40 top-10 h-[30rem] w-[30rem] opacity-30" style={{ "--speed": "-0.12" } as React.CSSProperties} />
       <div className="container-page relative">
         <Reveal className="max-w-3xl">

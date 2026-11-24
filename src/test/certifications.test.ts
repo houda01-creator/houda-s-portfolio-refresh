@@ -11,6 +11,13 @@ describe("Certifications", () => {
     expect(giz?.code).toBe("6777329865HE");
   });
 
+  it("la carte GIZ ouvre le certificat sur Google Drive au clic", () => {
+    const giz = certifications.find((c) => c.org === "GIZ DataCipation");
+    expect(giz?.href).toBe(
+      "https://drive.google.com/file/d/1FMUnrS80C6tRSr_Qq0gQwcGACo4Kl9Dn/view?usp=drive_link",
+    );
+  });
+
   it("chaque certification a un organisme, un titre, un descriptif et des étiquettes", () => {
     for (const c of certifications) {
       expect(c.org.length).toBeGreaterThan(0);

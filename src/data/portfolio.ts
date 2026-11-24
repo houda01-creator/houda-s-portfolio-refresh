@@ -293,6 +293,7 @@ export const certifications: Certification[] = [
     title: "The African Data Economy in the Global Context",
     body: "Acquisition d'une vision stratégique sur les enjeux, les dynamiques et la gouvernance de l'économie des données en Afrique à l'échelle mondiale.",
     tags: ["Économie des données", "Gouvernance"],
+    href: "https://drive.google.com/file/d/1FMUnrS80C6tRSr_Qq0gQwcGACo4Kl9Dn/view?usp=drive_link",
     code: "6777329865HE",
   },
 ];
